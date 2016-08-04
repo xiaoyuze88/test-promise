@@ -1,4 +1,4 @@
-import promise from './promise/index';
+import promise from './methods/index';
 import constant from './constant';
 import core from './core';
 
@@ -11,7 +11,7 @@ function ES6Promise(resolver) {
       the Promise constructor.`);
   }
 
-  this.status = constant.STATUS_PENDING;
+  this.state = constant.STATE_PENDING;
 
   resolver((val) => {
     core.resolve(this, val);

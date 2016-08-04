@@ -78,7 +78,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
-	var _index = __webpack_require__(7);
+	var _index = __webpack_require__(12);
 	
 	var _index2 = _interopRequireDefault(_index);
 	
@@ -102,7 +102,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    throw new Error('You must pass a resolver function as the first argument to \n      the Promise constructor.');
 	  }
 	
-	  this.status = _constant2.default.STATUS_PENDING;
+	  this.state = _constant2.default.STATE_PENDING;
 	
 	  resolver(function (val) {
 	    _core2.default.resolve(_this, val);
@@ -125,125 +125,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = ES6Promise;
 
 /***/ },
-/* 2 */
-/***/ function(module, exports) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	function all() {}
-	
-	exports.default = all;
-
-/***/ },
-/* 3 */
-/***/ function(module, exports) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	function race() {}
-	
-	exports.default = race;
-
-/***/ },
-/* 4 */
-/***/ function(module, exports) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	function resolve() {}
-	
-	exports.default = resolve;
-
-/***/ },
-/* 5 */
-/***/ function(module, exports) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	function reject() {}
-	
-	exports.default = reject;
-
-/***/ },
+/* 2 */,
+/* 3 */,
+/* 4 */,
+/* 5 */,
 /* 6 */,
-/* 7 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _all = __webpack_require__(2);
-	
-	var _all2 = _interopRequireDefault(_all);
-	
-	var _race = __webpack_require__(3);
-	
-	var _race2 = _interopRequireDefault(_race);
-	
-	var _resolve = __webpack_require__(4);
-	
-	var _resolve2 = _interopRequireDefault(_resolve);
-	
-	var _reject = __webpack_require__(5);
-	
-	var _reject2 = _interopRequireDefault(_reject);
-	
-	var _then = __webpack_require__(8);
-	
-	var _then2 = _interopRequireDefault(_then);
-	
-	var _catch = __webpack_require__(9);
-	
-	var _catch2 = _interopRequireDefault(_catch);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = {
-	  all: _all2.default, race: _race2.default, resolve: _resolve2.default, reject: _reject2.default, then: _then2.default, promiseCatch: _catch2.default
-	};
-
-/***/ },
-/* 8 */
-/***/ function(module, exports) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	function then() {}
-	
-	exports.default = then;
-
-/***/ },
-/* 9 */
-/***/ function(module, exports) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	function promiseCatch() {}
-	
-	exports.default = promiseCatch;
-
-/***/ },
+/* 7 */,
+/* 8 */,
+/* 9 */,
 /* 10 */
 /***/ function(module, exports) {
 
@@ -252,12 +141,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	var STATUS_FULFILLED = 'STATUS_FULFILLED';
-	var STATUS_REJECTED = 'STATUS_REJECTED';
-	var STATUS_PENDING = 'STATUS_PENDING';
+	var STATE_FULFILLED = 'STATE_FULFILLED';
+	var STATE_REJECTED = 'STATE_REJECTED';
+	var STATE_PENDING = 'STATE_PENDING';
 	
 	exports.default = {
-	  STATUS_FULFILLED: STATUS_FULFILLED, STATUS_PENDING: STATUS_PENDING, STATUS_REJECTED: STATUS_REJECTED
+	  STATE_FULFILLED: STATE_FULFILLED, STATE_PENDING: STATE_PENDING, STATE_REJECTED: STATE_REJECTED
 	};
 
 /***/ },
@@ -276,6 +165,148 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = {
 	  resolve: resolve, reject: reject
 	};
+
+/***/ },
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _all = __webpack_require__(13);
+	
+	var _all2 = _interopRequireDefault(_all);
+	
+	var _race = __webpack_require__(14);
+	
+	var _race2 = _interopRequireDefault(_race);
+	
+	var _resolve = __webpack_require__(15);
+	
+	var _resolve2 = _interopRequireDefault(_resolve);
+	
+	var _reject = __webpack_require__(16);
+	
+	var _reject2 = _interopRequireDefault(_reject);
+	
+	var _then = __webpack_require__(17);
+	
+	var _then2 = _interopRequireDefault(_then);
+	
+	var _catch = __webpack_require__(18);
+	
+	var _catch2 = _interopRequireDefault(_catch);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  all: _all2.default, race: _race2.default, resolve: _resolve2.default, reject: _reject2.default, then: _then2.default, promiseCatch: _catch2.default
+	};
+
+/***/ },
+/* 13 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	function all() {}
+	
+	exports.default = all;
+
+/***/ },
+/* 14 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	function race() {}
+	
+	exports.default = race;
+
+/***/ },
+/* 15 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	function resolve() {}
+	
+	exports.default = resolve;
+
+/***/ },
+/* 16 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	function reject() {}
+	
+	exports.default = reject;
+
+/***/ },
+/* 17 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _constant = __webpack_require__(10);
+	
+	var _constant2 = _interopRequireDefault(_constant);
+	
+	var _core = __webpack_require__(11);
+	
+	var _core2 = _interopRequireDefault(_core);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function then(onFulfill, onRejected) {
+	  var promise = this;
+	
+	  switch (promise.state) {
+	    case _constant2.default.STATE_PENDING:
+	      break;
+	    case _constant2.default.STATE_FULFILLED:
+	      break;
+	    case _constant2.default.STATE_REJECTED:
+	      break;
+	    default:
+	      throw new Error('Unexpected Promise state: ' + promise.state + '.');
+	  }
+	}
+	
+	exports.default = then;
+
+/***/ },
+/* 18 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	function promiseCatch() {}
+	
+	exports.default = promiseCatch;
 
 /***/ }
 /******/ ])
